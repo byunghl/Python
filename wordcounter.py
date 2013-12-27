@@ -8,6 +8,14 @@ fin = open('book.txt')
 
 dic = {}
 
+def highest():
+    key = ""
+    highest = dic.values()[0]; #value of 'first' element
+    for item in dic:
+        if(dic[item] > highest):
+            highest = dic[item]
+            key = item
+    return "key = " + key + ", value = " + str(highest)
 
 start = default_timer()
 
@@ -35,6 +43,6 @@ for item in dic:
 end = default_timer()
 
 print "elapsed time: " + str(end - start)
-
+print highest()
 
 fin.close()
